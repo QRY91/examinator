@@ -12,7 +12,7 @@
 3. SQL injection prevention techniques
 ## 📚 Key Concepts & Definitions
 ### Cross-Site Scripting (XSS)
-** What is Cross-Site Scripting (XSS)?**
+**What is Cross-Site Scripting (XSS)?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -20,7 +20,7 @@ A web vulnerability where attackers inject malicious scripts into web pages view
 
 </details>
 
-** What are the three main types of XSS?**
+**What are the three main types of XSS?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -28,7 +28,7 @@ A web vulnerability where attackers inject malicious scripts into web pages view
 
 </details>
 
-** What is the difference between Stored XSS and Reflected XSS?**
+**What is the difference between Stored XSS and Reflected XSS?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -36,7 +36,7 @@ Stored XSS saves malicious script on the server (in database/files) and affects 
 
 </details>
 
-** What is DOM-based XSS?**
+**What is DOM-based XSS?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -45,7 +45,7 @@ XSS that occurs entirely in the client-side JavaScript when the page's DOM is mo
 </details>
 
 ### SQL Injection
-** How can you prevent XSS attacks?**
+**How can you prevent XSS attacks?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -53,7 +53,7 @@ XSS that occurs entirely in the client-side JavaScript when the page's DOM is mo
 
 </details>
 
-** What is SQL injection?**
+**What is SQL injection?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -61,7 +61,7 @@ An attack where malicious SQL code is inserted into application queries, potenti
 
 </details>
 
-** How can you prevent SQL injection?**
+**How can you prevent SQL injection?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -70,7 +70,7 @@ An attack where malicious SQL code is inserted into application queries, potenti
 </details>
 
 ### Web Application Security
-** What is the difference between SQL injection and XSS?**
+**What is the difference between SQL injection and XSS?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -78,7 +78,7 @@ SQL injection targets the database layer by manipulating SQL queries, while XSS 
 
 </details>
 
-** What is input validation?**
+**What is input validation?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -86,7 +86,7 @@ The process of checking that user input meets expected criteria (format, length,
 
 </details>
 
-** What is output encoding?**
+**What is output encoding?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -94,7 +94,7 @@ Converting potentially dangerous characters into safe representations before dis
 
 </details>
 
-** What is Content Security Policy (CSP)?**
+**What is Content Security Policy (CSP)?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -102,7 +102,7 @@ A security header that helps prevent XSS by controlling which resources the brow
 
 </details>
 
-** What is CSRF (Cross-Site Request Forgery)?**
+**What is CSRF (Cross-Site Request Forgery)?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -111,7 +111,7 @@ An attack that tricks users into performing unwanted actions on a web applicatio
 </details>
 
 ### Secure Development
-** How do you prevent CSRF attacks?**
+**How do you prevent CSRF attacks?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -119,7 +119,7 @@ An attack that tricks users into performing unwanted actions on a web applicatio
 
 </details>
 
-** What is the principle of defense in depth for web security?**
+**What is the principle of defense in depth for web security?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -127,7 +127,7 @@ Using multiple layers of security controls (input validation, output encoding, C
 
 </details>
 
-** What is a Web Application Firewall (WAF)?**
+**What is a Web Application Firewall (WAF)?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -136,7 +136,7 @@ A security appliance that filters HTTP traffic to protect web applications from 
 </details>
 
 ## 💡 Study Tips
-** What are HTTP security headers?**
+**What are HTTP security headers?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 

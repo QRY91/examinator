@@ -41,7 +41,7 @@ def convert_qa_to_spoilers(content: str) -> str:
                 spoiler_lines.append(spoiler_block)
             
             # Start new question
-            current_question = line[4:-2]  # Remove **Q: and **
+            current_question = line[4:-2].strip()  # Remove **Q: and ** and trim spaces
             current_answer = []
             
         # Detect A: pattern  

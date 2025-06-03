@@ -12,7 +12,7 @@
 3. Explain differential privacy and its advantages over k-anonymity
 ## 📚 Key Concepts & Definitions
 ### Privacy Fundamentals
-** What is the difference between privacy and confidentiality?**
+**What is the difference between privacy and confidentiality?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -20,7 +20,7 @@ Privacy is an individual's right to control how their personal data is used, whi
 
 </details>
 
-** What is personally identifiable information (PII)?**
+**What is personally identifiable information (PII)?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -29,7 +29,7 @@ Any information that can be used to identify a specific individual, either direc
 </details>
 
 ### Data Anonymization Techniques
-** What are quasi-identifiers?**
+**What are quasi-identifiers?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -37,7 +37,7 @@ Attributes that alone don't uniquely identify someone, but when combined with ot
 
 </details>
 
-** What is data anonymization?**
+**What is data anonymization?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -45,7 +45,7 @@ The process of removing or altering personally identifiable information so that 
 
 </details>
 
-** What are the main anonymization techniques?**
+**What are the main anonymization techniques?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -54,7 +54,7 @@ The process of removing or altering personally identifiable information so that 
 </details>
 
 ### K-Anonymity
-** What is pseudonymization?**
+**What is pseudonymization?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -62,7 +62,7 @@ Replacing identifying information with artificial identifiers (pseudonyms) while
 
 </details>
 
-** What is k-anonymity?**
+**What is k-anonymity?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -70,7 +70,7 @@ A privacy preservation technique ensuring that each record in a dataset is indis
 
 </details>
 
-** How do you achieve k-anonymity?**
+**How do you achieve k-anonymity?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -78,7 +78,7 @@ A privacy preservation technique ensuring that each record in a dataset is indis
 
 </details>
 
-** What does k=3 anonymity mean?**
+**What does k=3 anonymity mean?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -87,7 +87,7 @@ Every combination of quasi-identifier values appears at least 3 times in the dat
 </details>
 
 ### Advanced Privacy Techniques
-** What are the limitations of k-anonymity?**
+**What are the limitations of k-anonymity?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -95,7 +95,7 @@ Every combination of quasi-identifier values appears at least 3 times in the dat
 
 </details>
 
-** What is l-diversity?**
+**What is l-diversity?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -103,7 +103,7 @@ An extension of k-anonymity that ensures each equivalence class has at least l d
 
 </details>
 
-** What is t-closeness?**
+**What is t-closeness?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -111,7 +111,7 @@ Further refinement requiring that the distribution of sensitive attributes in ea
 
 </details>
 
-** What is differential privacy?**
+**What is differential privacy?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -120,7 +120,7 @@ A privacy technique that adds carefully calibrated random noise to query results
 </details>
 
 ### Privacy Attacks
-** What are the advantages of differential privacy over k-anonymity?**
+**What are the advantages of differential privacy over k-anonymity?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -128,7 +128,7 @@ A privacy technique that adds carefully calibrated random noise to query results
 
 </details>
 
-** What is a linking attack?**
+**What is a linking attack?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -136,7 +136,7 @@ An attack where an adversary combines the anonymized dataset with external data 
 
 </details>
 
-** What is a homogeneity attack on k-anonymous data?**
+**What is a homogeneity attack on k-anonymous data?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -145,7 +145,7 @@ When all records in an equivalence class have the same sensitive attribute value
 </details>
 
 ### Practical Considerations
-** What was the Netflix Prize dataset attack?**
+**What was the Netflix Prize dataset attack?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -153,7 +153,7 @@ A famous de-anonymization attack where researchers linked "anonymous" Netflix ra
 
 </details>
 
-** What factors should you consider when choosing k for k-anonymity?**
+**What factors should you consider when choosing k for k-anonymity?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -161,7 +161,7 @@ A famous de-anonymization attack where researchers linked "anonymous" Netflix ra
 
 </details>
 
-** How do you balance privacy and data utility?**
+**How do you balance privacy and data utility?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -170,7 +170,7 @@ A famous de-anonymization attack where researchers linked "anonymous" Netflix ra
 </details>
 
 ## 💡 Study Tips
-** What is the difference between anonymization and de-identification?**
+**What is the difference between anonymization and de-identification?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 

@@ -7,7 +7,7 @@
 
 # 🎯 Security Fundamentals - Clean Demo Flashcards
 ## CIA Triad & Basic Security
-** What does CIA stand for in cybersecurity?**
+**What does CIA stand for in cybersecurity?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -15,7 +15,7 @@ Confidentiality, Integrity, Availability - the three fundamental principles of i
 
 </details>
 
-** Define Confidentiality in the CIA Triad**
+**Define Confidentiality in the CIA Triad**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -23,7 +23,7 @@ Ensuring that information is accessible only to those authorized to access it. P
 
 </details>
 
-** Define Integrity in the CIA Triad**
+**Define Integrity in the CIA Triad**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -31,7 +31,7 @@ Ensuring that information is accurate, complete, and has not been modified by un
 
 </details>
 
-** Define Availability in the CIA Triad**
+**Define Availability in the CIA Triad**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -40,7 +40,7 @@ Ensuring that information and systems are accessible when needed by authorized u
 </details>
 
 ## Cryptography Basics
-** What is the difference between authentication and authorization?**
+**What is the difference between authentication and authorization?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -48,7 +48,7 @@ Authentication verifies WHO you are (identity verification), while authorization
 
 </details>
 
-** What is the main difference between symmetric and asymmetric encryption?**
+**What is the main difference between symmetric and asymmetric encryption?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -56,7 +56,7 @@ Symmetric uses the same key for encryption/decryption (faster, shared secret), w
 
 </details>
 
-** What is RSA and what is it used for?**
+**What is RSA and what is it used for?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -64,7 +64,7 @@ RSA is an asymmetric encryption algorithm using public/private key pairs. Used f
 
 </details>
 
-** What is AES?**
+**What is AES?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -72,7 +72,7 @@ Advanced Encryption Standard - a symmetric encryption algorithm that's fast and 
 
 </details>
 
-** What is hashing and how is it different from encryption?**
+**What is hashing and how is it different from encryption?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -81,7 +81,7 @@ Hashing is a one-way function that creates a fixed-size digest from input data. 
 </details>
 
 ## Network Security
-** What is HMAC?**
+**What is HMAC?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -89,7 +89,7 @@ Hash-based Message Authentication Code - combines a hash function with a secret 
 
 </details>
 
-** What is a firewall?**
+**What is a firewall?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -97,7 +97,7 @@ A network security device that monitors and controls incoming/outgoing network t
 
 </details>
 
-** What is the difference between HTTP and HTTPS?**
+**What is the difference between HTTP and HTTPS?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -106,7 +106,7 @@ HTTPS (HTTP Secure) adds TLS/SSL encryption to HTTP, protecting data in transit 
 </details>
 
 ## Common Attacks
-** What is a VPN?**
+**What is a VPN?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -114,7 +114,7 @@ Virtual Private Network - creates a secure, encrypted tunnel over the internet f
 
 </details>
 
-** What is phishing?**
+**What is phishing?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -122,7 +122,7 @@ A social engineering attack using fake emails, websites, or messages to trick us
 
 </details>
 
-** What is SQL injection?**
+**What is SQL injection?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -130,7 +130,7 @@ A web application attack where malicious SQL code is inserted into application q
 
 </details>
 
-** What is Cross-Site Scripting (XSS)?**
+**What is Cross-Site Scripting (XSS)?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -139,7 +139,7 @@ A web vulnerability where attackers inject malicious scripts into web pages view
 </details>
 
 ## Malware Types
-** What is a man-in-the-middle attack?**
+**What is a man-in-the-middle attack?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -147,7 +147,7 @@ An attack where the attacker intercepts and potentially alters communications be
 
 </details>
 
-** What is a virus vs. a worm?**
+**What is a virus vs. a worm?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -155,7 +155,7 @@ A virus requires a host file and user action to spread, while a worm can replica
 
 </details>
 
-** What is ransomware?**
+**What is ransomware?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -164,7 +164,7 @@ Malware that encrypts victim's files and demands payment (ransom) for the decryp
 </details>
 
 ## Access Control
-** What is a Trojan horse?**
+**What is a Trojan horse?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -172,7 +172,7 @@ Malware disguised as legitimate software that performs hidden malicious function
 
 </details>
 
-** What is the principle of least privilege?**
+**What is the principle of least privilege?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -180,7 +180,7 @@ Users should be given the minimum levels of access necessary to perform their jo
 
 </details>
 
-** What is multi-factor authentication (MFA)?**
+**What is multi-factor authentication (MFA)?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -189,7 +189,7 @@ Security method requiring two or more verification factors: something you know (
 </details>
 
 ## Incident Response
-** What is role-based access control (RBAC)?**
+**What is role-based access control (RBAC)?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -197,7 +197,7 @@ Access control method where permissions are assigned to roles, and users are ass
 
 </details>
 
-** What are the four main phases of incident response?**
+**What are the four main phases of incident response?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -206,7 +206,7 @@ Access control method where permissions are assigned to roles, and users are ass
 </details>
 
 ## Privacy & Compliance
-** What should be the first priority during a security incident?**
+**What should be the first priority during a security incident?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -214,7 +214,7 @@ Containment - prevent the incident from spreading or causing further damage whil
 
 </details>
 
-** What is data anonymization?**
+**What is data anonymization?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -222,7 +222,7 @@ The process of removing or altering personally identifiable information so indiv
 
 </details>
 
-** What is k-anonymity?**
+**What is k-anonymity?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 

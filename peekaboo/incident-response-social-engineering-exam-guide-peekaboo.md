@@ -12,7 +12,7 @@
 3. Social engineering attack vectors and countermeasures
 ## 📚 Key Concepts & Definitions
 ### Incident Response Process
-** What are the four main phases of incident response?**
+**What are the four main phases of incident response?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -20,7 +20,7 @@
 
 </details>
 
-** What happens during the Preparation phase?**
+**What happens during the Preparation phase?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -28,7 +28,7 @@ Establish incident response team, create policies/procedures, set up communicati
 
 </details>
 
-** What happens during Detection & Analysis?**
+**What happens during Detection & Analysis?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -36,7 +36,7 @@ Monitor systems for signs of incidents, analyze alerts, determine scope and impa
 
 </details>
 
-** What happens during Containment, Eradication & Recovery?**
+**What happens during Containment, Eradication & Recovery?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -44,7 +44,7 @@ Contain the incident to prevent spread, eliminate the threat, restore systems to
 
 </details>
 
-** What happens during Post-Incident Activity?**
+**What happens during Post-Incident Activity?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -53,7 +53,7 @@ Document lessons learned, update procedures, conduct post-mortem analysis, impro
 </details>
 
 ### Social Engineering Attacks
-** What should be the first priority during an incident?**
+**What should be the first priority during an incident?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -61,7 +61,7 @@ Containment - prevent the incident from spreading while preserving evidence for 
 
 </details>
 
-** What is social engineering?**
+**What is social engineering?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -69,7 +69,7 @@ Psychological manipulation techniques used to trick people into divulging confid
 
 </details>
 
-** What is phishing?**
+**What is phishing?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -77,7 +77,7 @@ Fraudulent emails, websites, or messages designed to steal sensitive information
 
 </details>
 
-** What is spear phishing?**
+**What is spear phishing?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -85,7 +85,7 @@ Targeted phishing attacks directed at specific individuals or organizations, usi
 
 </details>
 
-** What is whaling?**
+**What is whaling?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -93,7 +93,7 @@ Phishing attacks specifically targeting high-profile individuals like executives
 
 </details>
 
-** What is vishing?**
+**What is vishing?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -102,7 +102,7 @@ Voice phishing - social engineering attacks conducted over the phone to extract 
 </details>
 
 ### Social Engineering Techniques
-** What is pretexting?**
+**What is pretexting?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -110,7 +110,7 @@ Creating a fabricated scenario (pretext) to engage victims and gain their trust 
 
 </details>
 
-** What is baiting in social engineering?**
+**What is baiting in social engineering?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -118,7 +118,7 @@ Offering something enticing (like a free USB drive or download) that contains ma
 
 </details>
 
-** What is tailgating/piggybacking?**
+**What is tailgating/piggybacking?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -126,7 +126,7 @@ Following an authorized person into a restricted area without proper authenticat
 
 </details>
 
-** What is quid pro quo?**
+**What is quid pro quo?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -135,7 +135,7 @@ Offering a service or benefit in exchange for information or access, like fake I
 </details>
 
 ### Defense Against Social Engineering
-** What psychological principles do social engineers exploit?**
+**What psychological principles do social engineers exploit?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -143,7 +143,7 @@ Offering a service or benefit in exchange for information or access, like fake I
 
 </details>
 
-** How can organizations defend against social engineering?**
+**How can organizations defend against social engineering?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -151,7 +151,7 @@ Offering a service or benefit in exchange for information or access, like fake I
 
 </details>
 
-** What are red flags of phishing emails?**
+**What are red flags of phishing emails?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -160,7 +160,7 @@ Offering a service or benefit in exchange for information or access, like fake I
 </details>
 
 ### Incident Classification
-** What should users do if they suspect a social engineering attempt?**
+**What should users do if they suspect a social engineering attempt?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -168,7 +168,7 @@ Offering a service or benefit in exchange for information or access, like fake I
 
 </details>
 
-** How are security incidents typically classified?**
+**How are security incidents typically classified?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -176,7 +176,7 @@ By severity levels (Low, Medium, High, Critical) based on factors like business 
 
 </details>
 
-** What information should be documented during an incident?**
+**What information should be documented during an incident?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -185,7 +185,7 @@ Timeline of events, affected systems, actions taken, evidence collected, impact 
 </details>
 
 ## 💡 Study Tips
-** What is the difference between an incident and an event?**
+**What is the difference between an incident and an event?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 

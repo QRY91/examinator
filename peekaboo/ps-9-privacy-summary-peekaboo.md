@@ -7,7 +7,7 @@
 
 # 🔒 Privacy & Data Protection - Clean Study Guide
 ## Privacy Fundamentals
-** What is the difference between privacy and confidentiality?**
+**What is the difference between privacy and confidentiality?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -15,7 +15,7 @@ Privacy is an individual's right to control how their personal data is used, whi
 
 </details>
 
-** What is personally identifiable information (PII)?**
+**What is personally identifiable information (PII)?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -23,7 +23,7 @@ Any information that can be used to identify a specific individual, either direc
 
 </details>
 
-** What are quasi-identifiers?**
+**What are quasi-identifiers?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -32,7 +32,7 @@ Attributes that alone don't uniquely identify someone, but when combined with ot
 </details>
 
 ## GDPR (General Data Protection Regulation)
-** What is the linking attack problem?**
+**What is the linking attack problem?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -40,7 +40,7 @@ Attributes that alone don't uniquely identify someone, but when combined with ot
 
 </details>
 
-** What are the main principles of GDPR?**
+**What are the main principles of GDPR?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -48,7 +48,7 @@ Attributes that alone don't uniquely identify someone, but when combined with ot
 
 </details>
 
-** What is data minimization under GDPR?**
+**What is data minimization under GDPR?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -56,7 +56,7 @@ Only collecting personal data that is necessary and relevant for the specific, s
 
 </details>
 
-** What are the key individual rights under GDPR?**
+**What are the key individual rights under GDPR?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -64,7 +64,7 @@ Right to access, right to rectification, right to erasure (right to be forgotten
 
 </details>
 
-** What is the right to be forgotten?**
+**What is the right to be forgotten?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -73,7 +73,7 @@ Individuals can request organizations to delete their personal data under certai
 </details>
 
 ## Data Anonymization Techniques
-** Who is responsible for GDPR compliance?**
+**Who is responsible for GDPR compliance?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -81,7 +81,7 @@ The data controller (who determines purposes and means of processing) bears prim
 
 </details>
 
-** What is data anonymization?**
+**What is data anonymization?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -89,7 +89,7 @@ The process of removing or altering personally identifiable information so that 
 
 </details>
 
-** What are the main anonymization techniques?**
+**What are the main anonymization techniques?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -97,7 +97,7 @@ The process of removing or altering personally identifiable information so that 
 
 </details>
 
-** What is generalization in data anonymization?**
+**What is generalization in data anonymization?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -106,7 +106,7 @@ Replacing specific values with more general ones (e.g., exact age "25" becomes a
 </details>
 
 ## K-Anonymity
-** What is suppression in data anonymization?**
+**What is suppression in data anonymization?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -114,7 +114,7 @@ Removing entire records or fields that contain unique or sensitive information t
 
 </details>
 
-** What is k-anonymity?**
+**What is k-anonymity?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -122,7 +122,7 @@ A privacy preservation technique ensuring that each record in a dataset is indis
 
 </details>
 
-** What does k=3 anonymity mean?**
+**What does k=3 anonymity mean?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -130,7 +130,7 @@ Every combination of quasi-identifier values appears at least 3 times in the dat
 
 </details>
 
-** How do you achieve k-anonymity?**
+**How do you achieve k-anonymity?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -139,7 +139,7 @@ Through generalization (making values less specific) and suppression (removing o
 </details>
 
 ## Privacy Attacks
-** What are the limitations of k-anonymity?**
+**What are the limitations of k-anonymity?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -147,7 +147,7 @@ Through generalization (making values less specific) and suppression (removing o
 
 </details>
 
-** What is a homogeneity attack on k-anonymous data?**
+**What is a homogeneity attack on k-anonymous data?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -155,7 +155,7 @@ When all records in an equivalence class have the same sensitive attribute value
 
 </details>
 
-** What was the Netflix Prize dataset attack?**
+**What was the Netflix Prize dataset attack?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -163,7 +163,7 @@ A famous de-anonymization attack where researchers linked "anonymous" Netflix ra
 
 </details>
 
-** What is a linking attack?**
+**What is a linking attack?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -172,7 +172,7 @@ Combining an anonymized dataset with external data sources to re-identify indivi
 </details>
 
 ## Advanced Privacy Techniques
-** What is background knowledge attack?**
+**What is background knowledge attack?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -180,7 +180,7 @@ Using additional information about individuals (not in the dataset) to reduce an
 
 </details>
 
-** What is l-diversity?**
+**What is l-diversity?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -188,7 +188,7 @@ An extension of k-anonymity that ensures each equivalence class has at least l d
 
 </details>
 
-** What is t-closeness?**
+**What is t-closeness?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -196,7 +196,7 @@ Further refinement requiring that the distribution of sensitive attributes in ea
 
 </details>
 
-** What is differential privacy?**
+**What is differential privacy?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -205,7 +205,7 @@ A privacy technique that adds carefully calibrated random noise to query results
 </details>
 
 ## Practical Privacy Implementation
-** What are the advantages of differential privacy?**
+**What are the advantages of differential privacy?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -213,7 +213,7 @@ A privacy technique that adds carefully calibrated random noise to query results
 
 </details>
 
-** When is personal data considered truly anonymized under GDPR?**
+**When is personal data considered truly anonymized under GDPR?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -221,7 +221,7 @@ When data is irreversibly altered so that individuals cannot be identified direc
 
 </details>
 
-** What is pseudonymization?**
+**What is pseudonymization?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -229,7 +229,7 @@ Replacing identifying information with artificial identifiers while maintaining 
 
 </details>
 
-** What factors should you consider when choosing k for k-anonymity?**
+**What factors should you consider when choosing k for k-anonymity?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -238,7 +238,7 @@ Replacing identifying information with artificial identifiers while maintaining 
 </details>
 
 ## Database Privacy
-** How do you balance privacy and data utility?**
+**How do you balance privacy and data utility?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -246,7 +246,7 @@ Replacing identifying information with artificial identifiers while maintaining 
 
 </details>
 
-** What is database sanitization?**
+**What is database sanitization?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -254,7 +254,7 @@ Removing or protecting private information from databases before sharing or anal
 
 </details>
 
-** What is SQL sanitization for privacy?**
+**What is SQL sanitization for privacy?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 
@@ -262,7 +262,7 @@ Techniques to prevent SQL injection attacks that could lead to unauthorized acce
 
 </details>
 
-** Why is data retention important for privacy?**
+**Why is data retention important for privacy?**
 <details>
 <summary>🤔 Click to reveal answer</summary>
 

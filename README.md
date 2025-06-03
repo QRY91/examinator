@@ -223,4 +223,12 @@ python3 convert.py
 
 **Just works.** Even at 3am before an exam. Even on a bus with no wifi. Even when you're stressed and can't think straight.
 
-Start drilling: `python3 flashcards.py` 🎯 
+Start drilling: `python3 flashcards.py` 🎯
+
+---
+
+## 🛣️ Roadmap (Future Ideas)
+
+- **SQLite Integration**: Enhance flashcard study with persistent progress tracking (review dates, intervals, ease factors) for an even smarter, more resilient spaced repetition system. Could also log generation/conversion history.
+- **Advanced Content Parsing**: More robust extraction from diverse PDF layouts or other document types.
+- **Community Flashcard Decks**: A way to share and import pre-made flashcard decks on specific security topics. 

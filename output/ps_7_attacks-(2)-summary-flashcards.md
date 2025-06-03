@@ -1,0 +1,39 @@
+# Ps 7 Attacks (2) Summary - Flashcards
+
+- **a Denial of Service (DoS) attack**: An attack that makes a system or network resource unavailable by overwhelming it with traffic or requests.
+- **a Distributed Denial of Service (DDoS) attack**: A DoS attack using multiple compromised systems (botnet) to flood the target with traffic from many sources.
+- **ARP poisoning/spoofing**: Attack that associates the attacker's MAC address with the IP address of another host, redirecting network traffic through the attacker.
+- **DNS poisoning**: Corrupting DNS cache data to redirect domain name queries to malicious IP addresses instead of legitimate ones.
+- **a replay attack**: Intercepting and retransmitting valid network communications to gain unauthorized access or repeat transactions.
+- **IP spoofing**: Forging the source IP address in packets to impersonate another system and bypass security controls.
+- **a man-in-the-middle (MITM) attack**: Intercepting and potentially altering communications between two parties who believe they're communicating directly.
+- **the main weaknesses of WEP**: Static encryption keys, weak 24-bit initialization vector (IV), and RC4 stream cipher vulnerabilities.
+- **What improvements does WPA2 provide over WEP?**: Uses AES encryption, dynamic key generation per packet, and stronger authentication methods.
+- **a rogue access point**: Unauthorized wireless access point that can intercept wireless communications or provide network access to attackers.
+- **wardriving**: Searching for wireless networks while driving around to find unsecured or vulnerable access points.
+- **MAC address spoofing**: Changing a device's MAC address to impersonate another device and bypass MAC address filtering.
+- **SQL injection**: Inserting malicious SQL code into application queries to access, modify, or delete database information.
+- **How can you prevent SQL injection**: Use parameterized queries/prepared statements, input validation, and principle of least privilege for database accounts.
+- **Cross-Site Scripting (XSS)**: Injecting malicious scripts into web pages that execute in other users' browsers to steal data or hijack sessions.
+- **directory traversal**: Accessing files outside the web application's intended directory structure using relative path sequences (../).
+- **Cross-Site Request Forgery (CSRF)**: Tricking users into performing unwanted actions on web applications where they're authenticated.
+- **session hijacking**: Stealing or predicting session tokens to impersonate legitimate users and gain unauthorized access.
+- **a watering hole attack**: Compromising websites frequently visited by target organizations to infect visitors with malware.
+- **credential stuffing**: Using stolen username/password combinations from one breach to attempt login on other services.
+- **password spraying**: Attempting common passwords against many user accounts to avoid account lockouts from repeated failed attempts.
+- **a supply chain attack**: Compromising software or hardware during the development/distribution process to affect end users.
+- **How can you defend against DoS/DDoS attacks**: Use firewalls, rate limiting, load balancers, CDNs, and DDoS protection services.
+- **network segmentation**: Dividing networks into separate segments to limit attack spread and control access between segments.
+- **intrusion detection/prevention (IDS/IPS)**: Systems that monitor network traffic for malicious activity and can alert or block suspicious behavior.
+- **the principle of least privilege**: Granting users/systems only the minimum access rights needed to perform their functions.
+- **Why should you avoid unencrypted protocols?**: Data transmitted in plaintext can be easily intercepted and read by attackers monitoring network traffic.
+- **the difference between authentication and encryption**: Authentication verifies identity, while encryption protects data confidentiality during transmission or storage.
+- **secure alternatives to insecure protocols**: HTTPS instead of HTTP, SFTP instead of FTP, SSH instead of Telnet, SNMP v3 instead of v1/v2.
+- **Perfect Forward Secrecy**: Ensuring that compromise of long-term keys doesn't compromise past session keys or communications.
+- **penetration testing**: Authorized simulated attacks on systems to identify vulnerabilities before real attackers find them.
+- **the phases of penetration testing**: 1) Planning/Reconnaissance, 2) Scanning/Enumeration, 3) Exploitation, 4) Post-exploitation, 5) Reporting.
+- **the difference between black box and white box testing**: Black box tests with no prior knowledge of the system, white box tests with full system knowledge and access.
+- **common penetration testing tools**: Nmap (network scanning), Metasploit (exploitation), Burp Suite (web apps), Wireshark (packet analysis).
+- **What should be logged for security monitoring?**: Failed login attempts, privilege escalations, file access, network connections, and system changes.
+- **behavioral analysis in security**: Monitoring for unusual patterns in user behavior, network traffic, or system activity that may indicate attacks.
+- **threat hunting**: Proactively searching for signs of threats and attackers that may have evaded automated security controls.

@@ -207,7 +207,7 @@ Generate exactly {num_cards} flashcards now:"""
                         question_part = parts[0] + '**'  # Keep the numbering/bullet and **Question**
                         answer = parts[1]
                         # Create spoiler version with HTML details/summary
-                        spoiler_line = f"{question_part}: <details><summary>🤔 Click to reveal answer</summary>{answer}</details>"
+                        spoiler_line = f"{question_part}:\n<details>\n<summary>🤔 Click to reveal answer</summary>\n\n{answer}\n\n</details>"
                         spoiler_lines.append(spoiler_line)
                     else:
                         spoiler_lines.append(line)

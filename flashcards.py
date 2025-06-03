@@ -141,22 +141,28 @@ class FlashcardApp(App):
         color: #8cd0d3;
         padding: 1;
         background: #4f4f4f;
-        content-align: center middle;
+        text-align: center;
+        text-wrap: wrap;
+        width: 100%;
     }
     .answer {
         color: #9fdf9f;
         padding: 1;
         background: #4f4f4f;
-        content-align: center middle;
+        text-align: center;
+        text-wrap: wrap;
+        width: 100%;
     }
     .hint {
         color: #f0dfaf;
         text-style: italic;
         padding: 1;
-        content-align: center middle;
+        text-align: center;
+        text-wrap: wrap;
+        width: 100%;
     }
     #card-area {
-        height: 12;
+        height: 16;
         border: solid #6f6f6f;
         padding: 1;
         background: #4f4f4f;
@@ -236,21 +242,28 @@ class FlashcardApp(App):
 
     def load_cards(self):
         """Load cards from flashcard markdown files"""
+        # Load from both output and flashcards directories
         flashcard_files = list(Path("output").glob("*-flashcards.md"))
+        flashcard_files.extend(list(Path("flashcards").glob("*.md")))
         
         if not flashcard_files:
-            self.notify("No flashcard files found in output/ directory!")
+            self.notify("No flashcard files found in output/ or flashcards/ directories!")
             return
             
         cards_loaded = 0
         for file_path in flashcard_files:
             try:
-                with open(file_path, 'r') as f:
+                with open(file_path, 'r', encoding='utf-8') as f:
                     content = f.read()
                 
-                # Extract flashcards from markdown - format: - **Question**: Answer
-                pattern = r'- \*\*(.*?)\*\*:\s*(.*?)(?=\n-|\n#|\Z)'
-                matches = re.findall(pattern, content, re.DOTALL | re.MULTILINE)
+                # Extract flashcards from markdown - handle both formats:
+                # Format 1: - **Question**: Answer
+                # Format 2: 1. **Question**: Answer (LLM generated)
+                pattern1 = r'- \*\*(.*?)\*\*:\s*(.*?)(?=\n-|\n#|\n\d+\.|\Z)'
+                pattern2 = r'\d+\.\s*\*\*(.*?)\*\*:\s*(.*?)(?=\n\d+\.|\n#|\n-|\Z)'
+                
+                matches = re.findall(pattern1, content, re.DOTALL | re.MULTILINE)
+                matches.extend(re.findall(pattern2, content, re.DOTALL | re.MULTILINE))
                 
                 for question, answer in matches:
                     answer = re.sub(r'\s+', ' ', answer.strip())

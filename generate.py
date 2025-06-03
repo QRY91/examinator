@@ -11,6 +11,7 @@ import re
 import argparse
 from pathlib import Path
 from typing import List, Dict, Any
+import time
 
 class SpicyQuestionGenerator:
     def __init__(self, model: str = "mistral:latest"):
@@ -442,13 +443,12 @@ Generate exactly {num_cards} flashcards now:"""
                     
                 # Add delay between files to be nice to local LLM
                 print("⏳ Waiting 2 seconds before next file...")
-                import time
                 time.sleep(2)
                 
             except KeyboardInterrupt:
                 print("\n⏸️ Generation interrupted by user")
                 break
-    except Exception as e:
+            except Exception as e:
                 print(f"💥 Error processing {file_path.name}: {e}")
                 failed += 1
         

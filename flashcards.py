@@ -141,16 +141,19 @@ class FlashcardApp(App):
         color: #8cd0d3;
         padding: 1;
         background: #4f4f4f;
+        content-align: center middle;
     }
     .answer {
         color: #9fdf9f;
         padding: 1;
         background: #4f4f4f;
+        content-align: center middle;
     }
     .hint {
         color: #f0dfaf;
         text-style: italic;
         padding: 1;
+        content-align: center middle;
     }
     #card-area {
         height: 12;
@@ -232,28 +235,31 @@ class FlashcardApp(App):
         self.call_later(self.next_card)
 
     def load_cards(self):
-        """Load cards from markdown summaries"""
-        summary_files = list(Path("output").glob("*-summary.md"))
+        """Load cards from flashcard markdown files"""
+        flashcard_files = list(Path("output").glob("*-flashcards.md"))
         
-        if not summary_files:
-            self.notify("No summary files found in output/ directory!")
+        if not flashcard_files:
+            self.notify("No flashcard files found in output/ directory!")
             return
             
         cards_loaded = 0
-        for file_path in summary_files:
+        for file_path in flashcard_files:
             try:
                 with open(file_path, 'r') as f:
                     content = f.read()
                 
-                # Extract flashcards from markdown
+                # Extract flashcards from markdown - format: - **Question**: Answer
                 pattern = r'- \*\*(.*?)\*\*:\s*(.*?)(?=\n-|\n#|\Z)'
-                matches = re.findall(pattern, content, re.DOTALL)
+                matches = re.findall(pattern, content, re.DOTALL | re.MULTILINE)
                 
-                for term, definition in matches:
-                    definition = re.sub(r'\s+', ' ', definition.strip())
+                for question, answer in matches:
+                    answer = re.sub(r'\s+', ' ', answer.strip())
+                    question = question.strip()
+                    # Extract a short term from the question for identification
+                    term = ' '.join(question.split()[:3]) if question else "Unknown"
                     card = FlashCard(
-                        question=f"What is {term}?",
-                        answer=definition,
+                        question=question,
+                        answer=answer,
                         term=term
                     )
                     self.cards.append(card)
@@ -269,7 +275,7 @@ class FlashcardApp(App):
             self.notify(f"Ready to study! Loaded {cards_loaded} total cards.")
         else:
             self.title = "Smart Flashcards (No cards loaded)"
-            self.notify("No cards found! Check your summary files.")
+            self.notify("No cards found! Check your flashcard files.")
 
     def get_next_card(self) -> FlashCard:
         """Smart card selection - weighted by difficulty and recency"""

@@ -79,7 +79,7 @@ python3 convert.py
 
 ## 🎮 The 3-Command Philosophy
 
-Like [uroboro](https://urobo.eu/) - **simplicity over complexity**. Stressed students on buses need tools that **just work**.
+Like [uroboro](https://urobo.dev/) - **simplicity over complexity**. Stressed students on buses need tools that **just work**.
 
 ### 📱 Command 1: `flashcards.py`
 **Your main study app**

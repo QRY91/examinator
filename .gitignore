@@ -1,0 +1,31 @@
+# Input materials (private study content)
+input/
+
+# Temporary files
+temp/
+*.tmp
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Keep output/ to show examples of what the tool generates
+# but ignore large files
+*.gif.bak 
+
+# Obsidian
+.obsidian/

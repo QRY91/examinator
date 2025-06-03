@@ -49,25 +49,24 @@ def convert_to_flashcard_format(qa_pairs, source_file):
     return '\n'.join(flashcard_content)
 
 def main():
-    """Convert all clean summaries to flashcard format"""
-    summaries_dir = Path("summaries")
-    output_dir = Path("output")
+    summaries_dir = Path("summaries")  
+    flashcards_dir = Path("flashcards")
     
-    if not summaries_dir.exists():
-        print("❌ No summaries directory found!")
-        return
+    # Ensure directories exist
+    flashcards_dir.mkdir(exist_ok=True)
     
-    # Get all markdown files from summaries
+    print("🔄 Converting Q/A summaries to flashcard format...")
+    print("="*50)
+    
+    # Get all markdown files from summaries directory
     summary_files = list(summaries_dir.glob("*.md"))
     
     if not summary_files:
-        print("❌ No summary files found!")
+        print("❌ No summary files found in summaries/ directory")
         return
     
     total_cards = 0
-    
-    print("🔄 Converting Q/A summaries to flashcard format...")
-    print("=" * 50)
+    successful_conversions = 0
     
     for file_path in summary_files:
         print(f"📝 Processing: {file_path.name}")
@@ -75,32 +74,43 @@ def main():
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
                 content = f.read()
-            
-            # Extract Q/A pairs
-            qa_pairs = extract_qa_pairs(content)
-            
-            if not qa_pairs:
-                print(f"⚠️  No Q/A pairs found in {file_path.name}")
-                continue
-            
-            # Convert to flashcard format
-            flashcard_content = convert_to_flashcard_format(qa_pairs, file_path)
-            
-            # Write to output directory with -flashcards suffix
-            output_file = output_dir / f"{file_path.stem}-flashcards.md"
+        except UnicodeDecodeError:
+            print(f"⚠️  Encoding error in {file_path.name} - skipping")
+            continue
+        except Exception as e:
+            print(f"❌ Error reading {file_path.name}: {e}")
+            continue
+        
+        qa_pairs = extract_qa_pairs(content)
+        
+        if not qa_pairs:
+            print(f"⚠️  No Q/A pairs found in {file_path.name}")
+            continue
+        
+        # Convert to flashcard format
+        flashcard_content = convert_to_flashcard_format(qa_pairs, file_path)
+        
+        # Save flashcards to flashcards directory
+        output_file = flashcards_dir / f"{file_path.stem}-flashcards.md"
+        
+        try:
             with open(output_file, 'w', encoding='utf-8') as f:
                 f.write(flashcard_content)
             
             print(f"✅ Created: {output_file.name} ({len(qa_pairs)} cards)")
             total_cards += len(qa_pairs)
+            successful_conversions += 1
             
         except Exception as e:
-            print(f"❌ Error processing {file_path.name}: {e}")
+            print(f"❌ Error saving {output_file.name}: {e}")
     
-    print("\n" + "=" * 50)
+    print("\n" + "="*50)
     print(f"🎯 Conversion complete! Created {total_cards} flashcards total")
-    print(f"📁 Flashcards saved to: {output_dir}")
-    print("🚀 Ready to use with: python flashcards.py")
+    print(f"📁 Flashcards saved to: {flashcards_dir}")
+    print(f"🚀 Ready to use with: python3 flashcards.py")
+    
+    if successful_conversions == 0:
+        print("💡 Make sure you have Q/A format summaries in the summaries/ directory")
 
 if __name__ == "__main__":
     main() 

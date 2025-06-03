@@ -232,18 +232,15 @@ class FlashcardApp(App):
         self.call_later(self.next_card)
 
     def load_cards(self):
-        """Load cards from markdown flashcards"""
-        # Look for both flashcard files and summary files
-        flashcard_files = list(Path("output").glob("*-flashcards.md"))
+        """Load cards from markdown summaries"""
         summary_files = list(Path("output").glob("*-summary.md"))
-        all_files = flashcard_files + summary_files
         
-        if not all_files:
-            self.notify("No flashcard or summary files found in output/ directory!")
+        if not summary_files:
+            self.notify("No summary files found in output/ directory!")
             return
             
         cards_loaded = 0
-        for file_path in all_files:
+        for file_path in summary_files:
             try:
                 with open(file_path, 'r') as f:
                     content = f.read()
@@ -272,7 +269,7 @@ class FlashcardApp(App):
             self.notify(f"Ready to study! Loaded {cards_loaded} total cards.")
         else:
             self.title = "Smart Flashcards (No cards loaded)"
-            self.notify("No cards found! Check your flashcard files.")
+            self.notify("No cards found! Check your summary files.")
 
     def get_next_card(self) -> FlashCard:
         """Smart card selection - weighted by difficulty and recency"""

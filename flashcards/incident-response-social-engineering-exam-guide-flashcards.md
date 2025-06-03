@@ -1,0 +1,24 @@
+# Incident Response Social Engineering Exam Guide - Flashcards
+
+- **the four main phases of incident response**: 1) Preparation, 2) Detection & Analysis, 3) Containment, Eradication & Recovery, 4) Post-Incident Activity (Lessons Learned).
+- **What happens during the Preparation phase?**: Establish incident response team, create policies/procedures, set up communication channels, acquire tools, conduct training, and develop incident classification criteria.
+- **What happens during Detection & Analysis?**: Monitor systems for signs of incidents, analyze alerts, determine scope and impact, document evidence, and classify the incident severity.
+- **What happens during Containment, Eradication & Recovery?**: Contain the incident to prevent spread, eliminate the threat, restore systems to normal operations, and implement additional safeguards.
+- **What happens during Post-Incident Activity?**: Document lessons learned, update procedures, conduct post-mortem analysis, improve detection capabilities, and provide feedback to stakeholders.
+- **What should be the first priority during an incident?**: Containment - prevent the incident from spreading while preserving evidence for investigation.
+- **social engineering**: Psychological manipulation techniques used to trick people into divulging confidential information or performing actions that compromise security.
+- **phishing**: Fraudulent emails, websites, or messages designed to steal sensitive information like usernames, passwords, or credit card details by impersonating legitimate entities.
+- **spear phishing**: Targeted phishing attacks directed at specific individuals or organizations, using personalized information to increase credibility and success rate.
+- **whaling**: Phishing attacks specifically targeting high-profile individuals like executives, politicians, or celebrities (the "big fish").
+- **vishing**: Voice phishing - social engineering attacks conducted over the phone to extract sensitive information or convince victims to perform certain actions.
+- **pretexting**: Creating a fabricated scenario (pretext) to engage victims and gain their trust before requesting sensitive information or access.
+- **baiting in social engineering**: Offering something enticing (like a free USB drive or download) that contains malware or leads to a compromise when accessed.
+- **tailgating/piggybacking**: Following an authorized person into a restricted area without proper authentication, exploiting human courtesy.
+- **quid pro quo**: Offering a service or benefit in exchange for information or access, like fake IT support calls.
+- **What psychological principles do social engineers exploit?**: 1) Authority (impersonating figures of authority), 2) Urgency (creating time pressure), 3) Social proof (claiming others have complied), 4) Reciprocity (offering help first).
+- **How can organizations defend against social engineering**: 1) Security awareness training, 2) Clear policies and procedures, 3) Verification protocols, 4) Technical controls (email filtering), 5) Regular phishing simulations.
+- **red flags of phishing emails**: 1) Urgent/threatening language, 2) Generic greetings, 3) Suspicious links/attachments, 4) Grammar/spelling errors, 5) Requests for sensitive information, 6) Mismatched sender addresses.
+- **What should users do if they suspect a social engineering attempt?**: 1) Don't provide information, 2) Verify through independent channels, 3) Report to security team, 4) Document the attempt, 5) Warn colleagues if appropriate.
+- **How are security incidents typically classified**: By severity levels (Low, Medium, High, Critical) based on factors like business impact, data sensitivity, system criticality, and potential for spread.
+- **What information should be documented during an incident?**: Timeline of events, affected systems, actions taken, evidence collected, impact assessment, root cause, and lessons learned.
+- **the difference between an incident and an event**: An event is any observable occurrence in a system/network. An incident is an event that violates security policies or threatens the organization.

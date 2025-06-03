@@ -1,0 +1,34 @@
+# Ps 9 Privacy  Summary - Flashcards
+
+- **the difference between privacy and confidentiality**: Privacy is an individual's right to control how their personal data is used, while confidentiality is the obligation to keep information secret from unauthorized parties.
+- **personally identifiable information (PII)**: Any information that can be used to identify a specific individual, either directly (name, SSN) or indirectly when combined with other data.
+- **quasi-identifiers**: Attributes that alone don't uniquely identify someone, but when combined with other data sources can lead to re-identification (e.g., age, ZIP code, gender).
+- **the linking attack problem**: 87% of the US population can be uniquely identified using just ZIP code, gender, and date of birth when combined with external datasets.
+- **the main principles of GDPR**: 1) Lawful, fair, transparent processing, 2) Purpose limitation, 3) Data minimization, 4) Accuracy, 5) Storage limitation, 6) Integrity & confidentiality, 7) Accountability.
+- **data minimization under GDPR**: Only collecting personal data that is necessary and relevant for the specific, stated purpose - no more than required.
+- **the key individual rights under GDPR**: Right to access, right to rectification, right to erasure (right to be forgotten), right to data portability, right to object.
+- **the right to be forgotten**: Individuals can request organizations to delete their personal data under certain circumstances, such as when data is no longer necessary.
+- **Who is responsible for GDPR compliance?**: The data controller (who determines purposes and means of processing) bears primary responsibility for compliance.
+- **data anonymization**: The process of removing or altering personally identifiable information so that individuals cannot be identified from the dataset.
+- **the main anonymization techniques**: 1) Blanking (removing data), 2) Hashing (one-way transformation), 3) Masking (partial obscuring), 4) Generalization (making data less specific), 5) Suppression (removing records).
+- **generalization in data anonymization**: Replacing specific values with more general ones (e.g., exact age "25" becomes age range "20-30").
+- **suppression in data anonymization**: Removing entire records or fields that contain unique or sensitive information that cannot be generalized.
+- **k-anonymity**: A privacy preservation technique ensuring that each record in a dataset is indistinguishable from at least k-1 other records based on quasi-identifiers.
+- **What does k=3 anonymity mean?**: Every combination of quasi-identifier values appears at least 3 times in the dataset, so any individual is indistinguishable from at least 2 others.
+- **How do you achieve k-anonymity**: Through generalization (making values less specific) and suppression (removing outlier records) of quasi-identifiers.
+- **the limitations of k-anonymity**: 1) Homogeneity attack (if all k records have same sensitive value), 2) Background knowledge attack, 3) Data utility loss through generalization.
+- **a homogeneity attack on k-anonymous data**: When all records in an equivalence class have the same sensitive attribute value, allowing inference even without exact identification.
+- **What was the Netflix Prize dataset attack?**: A famous de-anonymization attack where researchers linked "anonymous" Netflix ratings with public IMDb ratings to identify users.
+- **a linking attack**: Combining an anonymized dataset with external data sources to re-identify individuals using quasi-identifiers.
+- **background knowledge attack**: Using additional information about individuals (not in the dataset) to reduce anonymity and potentially identify people.
+- **l-diversity**: An extension of k-anonymity that ensures each equivalence class has at least l different values for sensitive attributes, preventing homogeneity attacks.
+- **t-closeness**: Further refinement requiring that the distribution of sensitive attributes in each equivalence class is close to the overall distribution.
+- **differential privacy**: A privacy technique that adds carefully calibrated random noise to query results, providing mathematical guarantees about privacy.
+- **the advantages of differential privacy**: 1) Mathematical privacy guarantees, 2) Composability (multiple queries), 3) Resistance to auxiliary information attacks, 4) Better utility preservation.
+- **When is personal data considered truly anonymized under GDPR?**: When data is irreversibly altered so that individuals cannot be identified directly or indirectly, even with additional information.
+- **pseudonymization**: Replacing identifying information with artificial identifiers while maintaining a separate mapping that can be reversed if needed.
+- **What factors should you consider when choosing k for k-anonymity?**: 1) Sensitivity of data, 2) Risk tolerance, 3) Data utility requirements, 4) Size of dataset, 5) Regulatory requirements.
+- **How do you balance privacy and data utility**: 1) Choose appropriate anonymization level, 2) Use domain hierarchies for generalization, 3) Consider which attributes to generalize, 4) Evaluate information loss metrics.
+- **database sanitization**: Removing or protecting private information from databases before sharing or analysis to prevent privacy breaches.
+- **SQL sanitization for privacy**: Techniques to prevent SQL injection attacks that could lead to unauthorized access to personal data in databases.
+- **Why is data retention important for privacy?**: Keeping personal data longer than necessary increases privacy risks and may violate regulations like GDPR's storage limitation principle.

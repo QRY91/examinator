@@ -1,0 +1,9 @@
+textual>=0.44.0
+pathlib2>=2.3.7
+rich>=13.7.0
+
+# For PDF processing (optional)
+PyPDF2>=3.0.1
+
+# Ensure proper UTF-8 support
+chardet>=5.2.0 

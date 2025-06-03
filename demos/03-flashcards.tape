@@ -7,56 +7,71 @@ Set PlaybackSpeed 1.5
 Set Theme "Monokai Pro"
 
 Hide
-Type "cd ~/security-prep"
+Type "cd examinator"
 Enter
 Show
 
 Sleep 1s
-Type "# Flashcard App Demo - ADHD-Friendly Study Tool"
+Type "# EXAMINATOR - Flashcard App Demo"
 Enter
 Sleep 2s
 
-Type "# Launch the interactive flashcard app"
+Type "# Interactive ADHD-friendly study tool"
 Enter
 Sleep 1s
 
-Type "python3 flashcards.py"
+Type "# First, let's see the flashcard script"
 Enter
-Sleep 3s
-
-# Simulate flashcard interactions
-Type "j"  # Next card
-Sleep 2s
-
-Type "k"  # Previous card  
-Sleep 2s
-
-Type "h"  # Mark as hard (increase weight)
-Sleep 2s
-
-Type "e"  # Mark as easy (decrease weight)
-Sleep 2s
-
-Type "s"  # Show statistics
-Sleep 3s
-
-Type "q"  # Quit
 Sleep 1s
 
-Type "# Features:"
-Enter
-Type "# - j/k: Navigate cards"
-Enter
-Type "# - h: Mark hard (more repetition)"
-Enter
-Type "# - e: Mark easy (less repetition)"  
-Enter
-Type "# - s: Show progress stats"
-Enter
-Type "# - q: Quit"
+Type "head -20 flashcards.py"
 Enter
 Sleep 3s
 
-Type "# Zenburn theme = easy on eyes for long study sessions"
+Type "# Features of the flashcard app:"
+Enter
+Sleep 1s
+
+Type "echo '🧠 Smart spaced repetition'"
+Enter
+Sleep 1s
+
+Type "echo '⚡ Zenburn theme (easy on eyes)'"
+Enter
+Sleep 1s
+
+Type "echo '🎯 ADHD-friendly navigation'"
+Enter
+Sleep 1s
+
+Type "# Controls:"
+Enter
+Type "echo '  j/k - Navigate cards'"
+Enter
+Sleep 1s
+
+Type "echo '  h - Mark hard (more repetition)'"
+Enter
+Sleep 1s
+
+Type "echo '  e - Mark easy (less repetition)'"
+Enter
+Sleep 1s
+
+Type "echo '  s - Show progress stats'"
+Enter
+Sleep 1s
+
+Type "echo '  q - Quit and save progress'"
+Enter
+Sleep 2s
+
+Type "# To run: python3 flashcards.py"
+Enter
+Type "# (Needs summary files in output/ directory)"
+Enter
+Sleep 2s
+
+Type "# Crushes exam anxiety with systematic review!"
 Enter
 Sleep 2s 

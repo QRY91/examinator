@@ -7,12 +7,17 @@ Set PlaybackSpeed 2.0
 Set Theme "Monokai Pro"
 
 Hide
-Type "cd ~/security-prep"
+Type "# Cloning examinator repo"
+Enter
+Type "git clone https://github.com/QRY91/examinator.git"
+Enter
+Sleep 2s
+Type "cd examinator"
 Enter
 Show
 
 Sleep 1s
-Type "# Privacy & Security Exam Prep - Installation Demo"
+Type "# EXAMINATOR - Installation Demo"
 Enter
 Sleep 2s
 
@@ -56,6 +61,6 @@ Type "ls -la *.py"
 Enter
 Sleep 2s
 
-Type "# Ready to go! Try: python3 flashcards.py"
+Type "# Ready to crush exams! Try: python3 flashcards.py"
 Enter
 Sleep 2s 

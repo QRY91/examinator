@@ -21,6 +21,8 @@ python3 flashcards.py      # Study with spaced repetition
 
 ✨ **Best part:** No AI needed - pure regex magic that works offline
 
+📚 **Too stressed to install?** Pre-made summaries included! Just clone and use the flashcard app immediately.
+
 🎬 **See it in action:** https://github.com/QRY91/examinator
 (Click through the GIFs - installation takes 30 seconds)
 
@@ -28,7 +30,7 @@ Built this while cramming for security exam. Now sharing with fellow exam warrio
 
 **Perfect for:** CS students, security certs, anyone drowning in PDFs
 
-Drop a ⚡ if you want early access to improvements!
+More features? You want 'em, you merge 'em! 24 hours left, good luck! 🤓
 ```
 
 ---
@@ -41,7 +43,9 @@ Drop a ⚡ if you want early access to improvements!
 PDF → Summaries → Practice Questions → Flashcards
 All automated. All offline. All open source.
 
+📚 **Pre-made summaries included** - clone and start studying instantly!
+
 🎬 https://github.com/QRY91/examinator
 
-Built by a student who was tired of failing 💪
+More features? You want 'em, you merge 'em! 24 hours left, good luck! 🤓
 ``` 

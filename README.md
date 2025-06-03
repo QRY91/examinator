@@ -44,6 +44,29 @@ pip3 install textual --user --break-system-packages
 pip3 install PyMuPDF --user --break-system-packages
 ```
 
+### 🚨 Installation Issues?
+
+**Python giving you grief? Try these alternatives:**
+
+#### Option A: GitHub Codespaces (Recommended)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/QRY91/examinator)
+- Click button above → Instant cloud environment
+- Everything pre-installed, works in browser
+- Perfect for exam crunch time
+
+#### Option B: Docker One-Liner
+```bash
+docker run -it --rm -v $(pwd):/workspace python:3.11 bash
+cd /workspace && pip install textual PyMuPDF
+```
+
+#### Option C: Replit
+- Go to [replit.com](https://replit.com)
+- Import from GitHub: `QRY91/examinator`
+- Run in browser, no local install
+
+**Still having issues?** Use the pre-made summaries in `output/` - just clone and study!
+
 ### 2. Add Your Materials
 ```bash
 # Place PDFs and markdown files in the input/ directory
@@ -191,6 +214,10 @@ pip3 install PyMuPDF --user --break-system-packages
 ```bash
 chmod +x *.py  # Make scripts executable
 ```
+
+**Python installation nightmare:**
+- Use GitHub Codespaces (see Installation Issues section above)
+- Or just use the pre-made summaries - no installation needed!
 
 ### Debug Mode
 Add `--verbose` flag to any script for detailed output:

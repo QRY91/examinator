@@ -232,3 +232,82 @@ Start drilling: `python3 flashcards.py` 🎯
 - **SQLite Integration**: Enhance flashcard study with persistent progress tracking (review dates, intervals, ease factors) for an even smarter, more resilient spaced repetition system. Could also log generation/conversion history.
 - **Advanced Content Parsing**: More robust extraction from diverse PDF layouts or other document types.
 - **Community Flashcard Decks**: A way to share and import pre-made flashcard decks on specific security topics. 
+
+---
+
+## 🌐 Wiki Deployment (Collaborative Study)
+
+**Turn your study materials into a collaborative knowledge base!**
+
+### 📤 5-Command Workflow
+
+```bash
+# 1. STUDY - Interactive flashcards
+python3 flashcards.py
+
+# 2. GENERATE - LLM question creation  
+python3 generate.py --flashcards -f filename.md
+
+# 3. CONVERT - Notes → flashcards
+python3 convert.py
+
+# 4. INGEST - PDFs → Q&A summaries
+python3 ingest.py -f filename.pdf --llm
+
+# 5. WIKI - Summaries → collaborative format
+python3 wiki-export.py
+```
+
+### 🚀 Wiki Setup & Deployment
+
+**1. Generate Wiki Content**
+```bash
+# Convert all summaries to wiki format
+python3 wiki-export.py
+# Creates 20+ organized wiki pages in wiki/ directory
+```
+
+**2. Enable GitHub Wiki**
+- Go to your repo **Settings** → **Features**  
+- Check ✅ **Wikis**
+
+**3. Deploy to GitHub**
+```bash
+# Clone the wiki repository
+git clone https://github.com/YOUR_USERNAME/examinator.wiki.git
+
+# Copy generated content
+cp wiki/* examinator.wiki/
+
+# Deploy
+cd examinator.wiki
+git add .
+git commit -m "📚 Deploy comprehensive study wiki"
+git push origin master
+```
+
+**4. Share with Classmates**
+- Wiki URL: `https://github.com/YOUR_USERNAME/examinator/wiki`
+- **Organized by topic** - 6 study categories
+- **Collapsible Q&A** - Click 🤔 to reveal answers
+- **Collaborative editing** - Everyone can contribute
+
+### 📊 What You Get
+
+**Wiki Features:**
+- **20+ topic pages** with comprehensive Q&A
+- **6 organized categories** (Security Fundamentals, Cryptography, etc.)
+- **Collapsible spoilers** for progressive revelation  
+- **Mobile-friendly** for study-on-the-go
+- **Collaborative editing** for group knowledge building
+
+**Local Tools Remain:**
+- **Original summaries** preserved in `summaries/`
+- **Flashcard app** works offline with `flashcards.py`
+- **LLM generation** continues with `generate.py`
+
+This creates a **dual-mode study system**: 
+- **Individual**: Offline flashcard drilling  
+- **Collaborative**: Online wiki knowledge sharing
+
+--- 

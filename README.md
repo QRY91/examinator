@@ -3,6 +3,18 @@
 **3 commands. No internet. Maximum drilling.**  
 *Study security concepts with ADHD-friendly spaced repetition*
 
+## 🤖 AI Collaboration Transparency
+
+This project documentation and development has been enhanced through systematic AI collaboration following QRY Labs methodology:
+
+- **Human-Centered Development**: All core functionality, architecture decisions, and strategic direction remain human-controlled
+- **AI-Enhanced Documentation**: AI assistants help improve documentation quality and systematic presentation
+- **Transparent Attribution**: AI collaboration is acknowledged openly as part of QRY's commitment to ethical technology use
+- **Local AI Integration**: Examinator uses local AI (Ollama) for flashcard generation while maintaining complete privacy
+- **Systematic Methodology**: AI collaboration follows structured procedures documented in `/ai/` directory
+
+**Core Principle**: AI enhances human capability rather than replacing human judgment. Examinator exemplifies this by using local AI to generate study content while keeping all learning and knowledge assessment under human control.
+
 ## 📱 Quick Guide (Mobile-Optimized Text)
 
 *Cramped bus seat? Phone screen? These instructions are your lifeline.*

@@ -8,6 +8,8 @@ import re
 import json
 import random
 import time
+import sys
+import argparse
 from pathlib import Path
 from datetime import datetime, timedelta
 from typing import List, Dict
@@ -16,6 +18,13 @@ from textual.app import App, ComposeResult
 from textual.containers import Container, Horizontal, Vertical
 from textual.widgets import Button, Static, Label, ProgressBar, Header, Footer
 from textual.binding import Binding
+
+def escape_markup(text: str) -> str:
+    """Escape characters that have special meaning in Textual markup"""
+    if not text:
+        return text
+    # Escape brackets and backticks that can cause markup parsing errors
+    return text.replace("[", "\\[").replace("]", "\\]").replace("`", "\\`")
 
 class FlashCard:
     def __init__(self, question: str, answer: str, term: str):
@@ -76,17 +85,17 @@ class CardDisplay(Static):
             return
             
         if self.showing_answer:
-            yield Label(f"Q: {self.card.question}", classes="question")
-            yield Label(f"A: {self.card.answer}", classes="answer")
+            yield Label(f"Q: {escape_markup(self.card.question)}", classes="question")
+            yield Label(f"A: {escape_markup(self.card.answer)}", classes="answer")
         else:
-            yield Label(f"Q: {self.card.question}", classes="question")
+            yield Label(f"Q: {escape_markup(self.card.question)}", classes="question")
             yield Label("Press SPACE to reveal answer", classes="hint")
 
     def show_answer(self):
         self.showing_answer = True
         self.remove_children()
-        self.mount(Label(f"Q: {self.card.question}", classes="question"))
-        self.mount(Label(f"A: {self.card.answer}", classes="answer"))
+        self.mount(Label(f"Q: {escape_markup(self.card.question)}", classes="question"))
+        self.mount(Label(f"A: {escape_markup(self.card.answer)}", classes="answer"))
 
     def set_card(self, card: FlashCard):
         self.card = card
@@ -94,7 +103,7 @@ class CardDisplay(Static):
         # Clear and rebuild the display
         self.remove_children()
         if self.card:
-            self.mount(Label(f"Q: {self.card.question}", classes="question"))
+            self.mount(Label(f"Q: {escape_markup(self.card.question)}", classes="question"))
             self.mount(Label("Press SPACE to reveal answer", classes="hint"))
 
 class StatsDisplay(Static):
@@ -208,8 +217,9 @@ class FlashcardApp(App):
         Binding("q", "quit", "Quit"),
     ]
 
-    def __init__(self):
+    def __init__(self, cardset_filter=None):
         super().__init__()
+        self.cardset_filter = cardset_filter
         self.cards: List[FlashCard] = []
         self.current_card = None
         self.session_correct = 0
@@ -246,8 +256,13 @@ class FlashcardApp(App):
         flashcard_files = list(Path("output").glob("*-flashcards.md"))
         flashcard_files.extend(list(Path("flashcards").glob("*.md")))
         
+        # Apply cardset filter if specified
+        if self.cardset_filter:
+            flashcard_files = [f for f in flashcard_files if self.cardset_filter.lower() in f.name.lower()]
+        
         if not flashcard_files:
-            self.notify("No flashcard files found in output/ or flashcards/ directories!")
+            filter_msg = f" matching '{self.cardset_filter}'" if self.cardset_filter else ""
+            self.notify(f"No flashcard files found{filter_msg} in output/ or flashcards/ directories!")
             return
             
         cards_loaded = 0
@@ -301,7 +316,9 @@ class FlashcardApp(App):
         
         # Weighted random selection
         selected = random.choices(self.cards, weights=weights, k=1)[0]
-        self.notify(f"Selected card: {selected.term}")
+        # Escape brackets to prevent markup errors
+        safe_term = escape_markup(selected.term)
+        self.notify(f"Selected card: {safe_term}")
         return selected
 
     def next_card(self):
@@ -349,6 +366,66 @@ class FlashcardApp(App):
         elif event.button.id == "skip":
             self.action_skip()
 
+def list_available_cardsets():
+    """List available cardsets for selection"""
+    flashcard_files = list(Path("output").glob("*-flashcards.md"))
+    flashcard_files.extend(list(Path("flashcards").glob("*.md")))
+    
+    if not flashcard_files:
+        print("🚨 No flashcard files found!")
+        return []
+    
+    print("🤖 EXAMINATOR CARDSET ARSENAL:")
+    cardsets = {}
+    for i, file_path in enumerate(flashcard_files, 1):
+        name = file_path.stem.replace("-flashcards", "").replace("-llm-flashcards", "")
+        cardsets[str(i)] = (name, file_path.name)
+        print(f"  {i}. {name}")
+    
+    return cardsets
+
+def main():
+    parser = argparse.ArgumentParser(description="🤖 EXAMINATOR - Knowledge Destruction Mech")
+    parser.add_argument("--list", action="store_true", help="List available cardsets")
+    parser.add_argument("--cardset", "-c", type=str, help="Filter to specific cardset (partial name match)")
+    parser.add_argument("--all", action="store_true", help="Use all cardsets (default)")
+    
+    args = parser.parse_args()
+    
+    if args.list:
+        cardsets = list_available_cardsets()
+        if cardsets:
+            print("\n🎯 To use a specific cardset:")
+            print("   python3 flashcards.py --cardset <name>")
+            print("   python3 flashcards.py -c product")
+        return
+    
+    if not args.cardset and not args.all:
+        # Interactive selection
+        cardsets = list_available_cardsets()
+        if not cardsets:
+            return
+            
+        print("\n🎯 Select cardset (enter number) or 'all' for everything:")
+        choice = input(">>> ").strip().lower()
+        
+        if choice == "all" or choice == "":
+            cardset_filter = None
+        elif choice in cardsets:
+            cardset_filter = cardsets[choice][0]
+            print(f"🚀 ENGAGING {cardsets[choice][0].upper()} DESTRUCTION PROTOCOL!")
+        else:
+            # Treat as partial name match
+            cardset_filter = choice
+    else:
+        cardset_filter = args.cardset
+    
+    print("🤖 EXAMINATOR MECH: ONLINE")
+    print("⚡ Use SPACE to show answers, G for correct, N for wrong")
+    print("💥 COMMENCING KNOWLEDGE DESTRUCTION SEQUENCE...")
+    
+    app = FlashcardApp(cardset_filter=cardset_filter)
+    app.run()
+
 if __name__ == "__main__":
-    app = FlashcardApp()
-    app.run() 
+    main()

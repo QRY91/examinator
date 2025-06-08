@@ -104,7 +104,42 @@ D) [Option D]
 
 Generate exactly {num_questions} questions now:"""
 
-        return self._call_ollama(prompt, timeout=90)
+        result = self._call_ollama(prompt, timeout=90)
+        return self._validate_flashcard_output(result, num_cards)
+    
+    def _validate_flashcard_output(self, output: str, expected_count: int) -> str:
+        """Validate and clean flashcard output to prevent garbage"""
+        if not output or len(output.strip()) < 50:
+            return "❌ Error: AI generated insufficient content"
+        
+        # Count valid flashcards (look for numbered format)
+        import re
+        flashcard_pattern = r'\d+\.\s*\*\*.*?\*\*:\s*.+'
+        matches = re.findall(flashcard_pattern, output, re.MULTILINE)
+        
+        if len(matches) < expected_count // 2:  # At least half the expected cards
+            return f"❌ Error: AI generated only {len(matches)} valid flashcards out of {expected_count} expected"
+        
+        # Check for garbage patterns
+        garbage_indicators = [
+            "I cannot", "I'm sorry", "As an AI", "I don't have access",
+            "```", "---", "Note:", "Disclaimer:", "Please note"
+        ]
+        
+        for indicator in garbage_indicators:
+            if indicator in output:
+                return f"❌ Error: AI output contains garbage pattern: '{indicator}'"
+        
+        # Clean up the output
+        lines = output.strip().split('\n')
+        cleaned_lines = []
+        
+        for line in lines:
+            line = line.strip()
+            if line and not line.startswith('#'):  # Remove headers and empty lines
+                cleaned_lines.append(line)
+        
+        return '\n'.join(cleaned_lines)
 
     def generate_scenario_questions(self, content: str, num_scenarios: int = 3) -> str:
         """Generate practical scenario-based questions"""
@@ -157,32 +192,31 @@ Generate exactly {num_terms} definition questions now:"""
         return self._call_ollama(prompt, timeout=60)
 
     def generate_flashcards(self, content: str, num_cards: int = 15) -> str:
-        """Generate flashcards from study content"""
+        """Generate flashcards from study content with quality validation"""
         
-        prompt = f"""You are an expert educator creating flashcards for cybersecurity exam preparation.
+        prompt = f"""You are creating study flashcards. Be precise and factual.
 
-Based on this study material, create {num_cards} high-quality flashcards that test key concepts.
-
-STUDY MATERIAL:
+SOURCE MATERIAL:
 {content[:3000]}
 
 REQUIREMENTS:
-1. Each flashcard should test one specific concept clearly
-2. Questions should be concise but complete
-3. Answers should be precise and include key details
-4. Mix different types: definitions, comparisons, applications, procedures
-5. Focus on exam-relevant material that students need to memorize/understand
-6. Include practical applications where possible
+- Create exactly {num_cards} flashcards
+- Each tests ONE specific concept
+- Questions must be clear and complete
+- Answers must be factual and concise (1-2 sentences max)
+- No repetition between cards
+- Focus on testable facts, not opinions
 
-FORMAT each flashcard as:
-- **[Question or term]**: [Complete answer with key details]
+FORMAT (use exactly this format):
+1. **[Clear question or "What is..." or "How does..."]**: [Factual answer in 1-2 sentences]
 
-Example format:
-- **What is the main difference between symmetric and asymmetric encryption**: Symmetric uses the same key for encryption/decryption (faster, shared secret), while asymmetric uses different keys - public/private key pairs (slower, no shared secret needed).
+EXAMPLE:
+1. **What is the main purpose of SSL/TLS encryption**: To provide secure communication over networks by encrypting data in transit and authenticating server identity.
 
-Generate exactly {num_cards} flashcards now:"""
+Generate exactly {num_cards} flashcards using this exact format:"""
 
-        return self._call_ollama(prompt, timeout=90)
+        result = self._call_ollama(prompt, timeout=90)
+        return self._validate_flashcard_output(result, num_cards)
 
     def generate_flashcards_with_spoilers(self, content: str, num_cards: int = 15) -> tuple[str, str]:
         """Generate flashcards in both regular format and spoiler format"""
@@ -456,6 +490,36 @@ Generate exactly {num_cards} flashcards now:"""
         print(f"✅ Successful: {successful}")
         print(f"❌ Failed: {failed}")
         print(f"📁 Questions saved to: {self.output_dir}")
+
+def generate_flashcards_from_file(file_path: str, num_cards: int = 15) -> str:
+    """Wrapper function for fusion integration - generate flashcards from file"""
+    generator = SpicyQuestionGenerator()
+    file_path_obj = Path(file_path)
+    
+    if not generator.test_ollama_connection():
+        raise Exception("Ollama connection failed")
+    
+    success = generator.process_flashcards_only(file_path_obj, num_cards=num_cards)
+    if success:
+        output_file = generator.flashcards_dir / f"{file_path_obj.stem}-llm-flashcards.md"
+        return str(output_file)
+    else:
+        raise Exception(f"Failed to generate flashcards for {file_path}")
+
+def generate_wiki_from_file(file_path: str) -> str:
+    """Wrapper function for fusion integration - generate comprehensive content from file"""
+    generator = SpicyQuestionGenerator()
+    file_path_obj = Path(file_path)
+    
+    if not generator.test_ollama_connection():
+        raise Exception("Ollama connection failed")
+    
+    success = generator.process_file(file_path_obj, question_types=["multiple_choice", "scenarios", "definitions"])
+    if success:
+        output_file = generator.output_dir / f"{file_path_obj.stem}-questions.md"
+        return str(output_file)
+    else:
+        raise Exception(f"Failed to generate wiki content for {file_path}")
 
 def main():
     parser = argparse.ArgumentParser(description="🌶️ Generate spicy practice questions using local LLM")

@@ -15,6 +15,34 @@ This project documentation and development has been enhanced through systematic 
 
 **Core Principle**: AI enhances human capability rather than replacing human judgment. Examinator exemplifies this by using local AI to generate study content while keeping all learning and knowledge assessment under human control.
 
+## 🔗 QRY Ecosystem Integration (Experimental)
+
+**examinator** now supports experimental integration with the QRY ecosystem database, enabling automatic flashcard generation from development work while maintaining complete independence.
+
+**Ecosystem Features:**
+- **Automatic Discovery**: Detects shared QRY ecosystem database (`~/.local/share/qry/ecosystem.sqlite`)
+- **Smart Flashcard Generation**: Creates study materials from uroboro captures automatically
+- **Context-Aware Learning**: Uses wherewasi context to improve flashcard categorization
+- **Cross-Tool Intelligence**: Receives notifications when new content is captured
+- **Graceful Fallback**: Works normally with local database when ecosystem unavailable
+
+**Status Indicators:**
+```bash
+python3 ecosystem_integration_example.py status
+# Ecosystem mode: "Ecosystem mode: ENABLED"
+# Local mode:     "Ecosystem mode: DISABLED"
+```
+
+**Ecosystem Commands:**
+```bash
+python3 ecosystem_integration_example.py sync            # Process captures from uroboro
+python3 ecosystem_integration_example.py generate --project myproject  # Generate from captures
+python3 ecosystem_integration_example.py study --project myproject     # Study with context
+python3 ecosystem_integration_example.py --local        # Force local database mode
+```
+
+**Integration Status**: Experimental implementation - automatically generates study materials from development activity when ecosystem tools work together, functions independently when not.
+
 ## 📱 Quick Guide (Mobile-Optimized Text)
 
 *Cramped bus seat? Phone screen? These instructions are your lifeline.*

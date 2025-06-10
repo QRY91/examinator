@@ -1,77 +1,47 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using {ProjectName}.Data;
-using {ProjectName}.Models;
-using {ProjectName}.Repositories;
-using {ProjectName}.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// === REPOSITORIES (Add your specific repositories here) ===
-builder.Services.AddScoped<I{Entity}Repository, {Entity}Repository>();
-// Example: builder.Services.AddScoped<IProductRepository, ProductRepository>();
-
-// === SERVICES (Add your business logic services here) ===
-builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
-// Example: builder.Services.AddScoped<I{Service}Service, {Service}Service>();
-
-// === CORE MVC SERVICES ===
-builder.Services.AddControllersWithViews();
-builder.Services.AddHttpContextAccessor();
 
 // === DATABASE & IDENTITY CONFIGURATION ===
 builder.Services.AddDbContext<{ProjectName}DbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddIdentity<{CustomUser}, IdentityRole>(options =>
+// === IDENTITY SETUP (Choose one option) ===
+// Option 1: Simple Identity with IdentityUser (recommended for exams)
+builder.Services.AddDefaultIdentity<IdentityUser>(options => 
 {
-    // User configuration
-    options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+ ";
-    options.User.RequireUniqueEmail = true;
-
-    // Password requirements (adjust for exam/demo purposes)
-    options.Password.RequireDigit = false;
+    options.SignIn.RequireConfirmedAccount = false;
     options.Password.RequiredLength = 6;
-    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireDigit = false;
     options.Password.RequireUppercase = false;
     options.Password.RequireLowercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+})
+.AddEntityFrameworkStores<{ProjectName}DbContext>();
 
-    // Lockout configuration
-    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
-    options.Lockout.MaxFailedAccessAttempts = 5;
-    options.Lockout.AllowedForNewUsers = true;
-
-    // Sign-in requirements (simplified for exam)
+// Option 2: Full Identity with Roles (uncomment if you need roles)
+/*
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+{
     options.SignIn.RequireConfirmedAccount = false;
-    options.SignIn.RequireConfirmedEmail = false;
-    options.SignIn.RequireConfirmedPhoneNumber = false;
+    options.Password.RequiredLength = 6;
+    options.Password.RequireDigit = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireNonAlphanumeric = false;
 })
 .AddEntityFrameworkStores<{ProjectName}DbContext>()
-.AddDefaultTokenProviders();
-
-// === COOKIE AUTHENTICATION CONFIGURATION ===
-builder.Services.ConfigureApplicationCookie(options =>
-{
-    options.Cookie.HttpOnly = true;
-    options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
-    options.LoginPath = "/Auth/Login";
-    options.LogoutPath = "/Auth/Logout";
-    options.AccessDeniedPath = "/Auth/AccessDenied";
-    options.SlidingExpiration = true;
-});
-
-// === EXTERNAL AUTHENTICATION (Optional - uncomment if needed) ===
-/*
-builder.Services.AddAuthentication()
-    .AddGoogle(options =>
-    {
-        options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
-        options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
-    });
+.AddDefaultTokenProviders()
+.AddDefaultUI();
 */
 
-// === ANTI-FORGERY TOKEN ===
-builder.Services.AddAntiforgery(options => options.HeaderName = "X-CSRF-TOKEN");
+// === CORE MVC SERVICES ===
+builder.Services.AddControllersWithViews();
+
+// === REPOSITORIES (Add only if you're using Repository pattern) ===
+// builder.Services.AddScoped<I{Entity}Repository, {Entity}Repository>();
 
 var app = builder.Build();
 
@@ -96,36 +66,22 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-// === DATABASE SEEDING (Optional - create SeedDatabase extension) ===
-// app.SeedDatabase();
+// === IDENTITY ROUTES (for registration/login pages) ===
+app.MapRazorPages();
 
 app.Run();
 
 /* 
-=== QUICK SETUP CHECKLIST FOR EXAM ===
+=== EXAM-READY QUICK SETUP ===
 
 1. Replace {ProjectName} with your actual project name
-2. Replace {Entity} with your main entities (Product, Order, etc.)
-3. Replace {CustomUser} with your user model or use IdentityUser
-4. Add specific repositories and services you need
-5. Update connection string in appsettings.json
-6. Create DbContext class
-7. Add-Migration InitialCreate
-8. Update-Database
+2. Ensure you have these NuGet packages:
+   - Microsoft.AspNetCore.Identity.EntityFrameworkCore
+   - Microsoft.EntityFrameworkCore.SqlServer
+   - Microsoft.EntityFrameworkCore.Tools
+   - Microsoft.AspNetCore.Identity.UI
 
-=== COMMON REPOSITORIES TO ADD ===
-- IProductRepository, ProductRepository
-- IOrderRepository, OrderRepository  
-- ICategoryRepository, CategoryRepository
-- ICustomerRepository, CustomerRepository
-
-=== COMMON SERVICES TO ADD ===
-- IEmailService, EmailService
-- IFileUploadService, FileUploadService
-- ICartService, CartService
-- IPaymentService, PaymentService
-
-=== MINIMAL APPSETTINGS.JSON ===
+3. Add connection string to appsettings.json:
 {
   "ConnectionStrings": {
     "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database={ProjectName}Db;Trusted_Connection=true;MultipleActiveResultSets=true"
@@ -138,4 +94,19 @@ app.Run();
   },
   "AllowedHosts": "*"
 }
+
+4. Create your DbContext
+5. Run: dotnet ef migrations add InitialCreate
+6. Run: dotnet ef database update
+
+=== TESTING THE SETUP ===
+- Navigate to /Identity/Account/Register to create an account
+- Navigate to /Identity/Account/Login to sign in
+- Use [Authorize] attribute on controllers to protect them
+
+=== IF YOU GET BUILD ERRORS ===
+- Make sure all using statements reference existing namespaces
+- Verify all NuGet packages are installed
+- Check that DbContext class exists and is properly named
+- Ensure appsettings.json has the connection string
 */

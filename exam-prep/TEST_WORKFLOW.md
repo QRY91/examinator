@@ -19,12 +19,12 @@
 
 ## ⏱️ **TEST SCHEDULE (Set Timers!)**
 
-| Test Phase | Time Limit | What You're Testing |
-|------------|------------|-------------------|
-| **Setup Test** | 0-5 min | Basic project creation |
-| **Template Test** | 5-15 min | Copy-paste workflow |
-| **CRUD Test** | 15-25 min | Basic functionality |
-| **Debrief** | 25-30 min | Notes and adjustments |
+| Test Phase        | Time Limit | What You're Testing    |
+| ----------------- | ---------- | ---------------------- |
+| **Setup Test**    | 0-5 min    | Basic project creation |
+| **Template Test** | 5-15 min   | Copy-paste workflow    |
+| **CRUD Test**     | 15-25 min  | Basic functionality    |
+| **Debrief**       | 25-30 min  | Notes and adjustments  |
 
 **Total**: 30 minutes - Set timer for each phase!
 
@@ -33,9 +33,11 @@
 ## 🚀 **PHASE 1: SETUP TEST (0-5 minutes)**
 
 ### **Goal**: Verify basic project creation works
+
 **Timer**: Set 5-minute countdown
 
 ### **Steps**:
+
 1. **Open terminal/command prompt**
 2. **Create test project**:
    ```bash
@@ -44,12 +46,14 @@
    dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore
    dotnet add package Microsoft.EntityFrameworkCore.SqlServer
    dotnet add package Microsoft.EntityFrameworkCore.Tools
+   dotnet add package Microsoft.AspNetCore.Identity.UI
    ```
 3. **Open in Visual Studio/VS Code**
 4. **Run the project** (`dotnet run` or F5)
 5. **Verify** default MVC page loads in browser
 
 ### **Success Criteria**:
+
 - [ ] Project created without errors
 - [ ] All packages installed successfully
 - [ ] Project runs and shows default MVC page
@@ -62,16 +66,20 @@
 ## 📋 **PHASE 2: TEMPLATE TEST (5-15 minutes)**
 
 ### **Goal**: Test copy-paste and find/replace workflow
+
 **Timer**: Set 10-minute countdown
 
 ### **Steps**:
+
 1. **Copy Model template**:
+
    - Open `templates/Model.cs.template`
    - Copy entire content
    - Create `Models/Product.cs`
    - Paste content
 
 2. **Test find/replace**:
+
    - Find: `{ProjectName}` → Replace: `ExamTest`
    - Find: `{Entity}` → Replace: `Product`
    - Find: `{Entities}` → Replace: `Products`
@@ -79,6 +87,7 @@
    - Find: `{RelatedEntities}` → Replace: `Categories`
 
 3. **Create Category model**:
+
    - Copy template again
    - Create `Models/Category.cs`
    - Replace placeholders with Category/Categories
@@ -88,6 +97,7 @@
    - Fix any syntax errors
 
 ### **Success Criteria**:
+
 - [ ] Templates copy-paste cleanly
 - [ ] Find/replace works efficiently
 - [ ] Models compile without syntax errors
@@ -100,10 +110,13 @@
 ## 🗄️ **PHASE 3: CRUD TEST (15-25 minutes)**
 
 ### **Goal**: Test full template workflow
+
 **Timer**: Set 10-minute countdown
 
 ### **Steps**:
+
 1. **Create DbContext** (3 minutes):
+
    - Copy `templates/DbContext.cs.template`
    - Create `Data/ExamTestDbContext.cs`
    - Replace placeholders
@@ -117,11 +130,13 @@
      ```
 
 2. **Update Program.cs** (2 minutes):
+
    - Copy relevant sections from `templates/Program.cs.template`
    - Add DbContext registration
    - Add basic services
 
 3. **Create Migration** (2 minutes):
+
    - `Add-Migration InitialCreate`
    - `Update-Database`
 
@@ -131,6 +146,7 @@
    - Check that database was created
 
 ### **Success Criteria**:
+
 - [ ] DbContext created correctly
 - [ ] Migration runs successfully
 - [ ] Database creates without errors
@@ -146,6 +162,7 @@
 ### **Goal**: Document what works and what needs adjustment
 
 ### **Questions to Answer**:
+
 1. **What took longer than expected?**
 2. **Which templates were hardest to use?**
 3. **Any school laptop specific issues?**
@@ -153,13 +170,16 @@
 5. **Are you confident with the copy-paste speed?**
 
 ### **Adjustments to Make**:
+
 - [ ] **If behind time**: Practice find/replace more
 - [ ] **If syntax errors**: Review template placeholders
 - [ ] **If migration issues**: Practice EF commands
 - [ ] **If environment issues**: Fix before exam
 
 ### **Create Your Cheat Sheet**:
+
 Write down:
+
 - Any school laptop specific commands
 - Shortcuts that work for you
 - Common errors you encountered and fixes
@@ -170,7 +190,9 @@ Write down:
 ## 🚨 **COMMON ISSUES & SOLUTIONS**
 
 ### **"Migration Failed"**
+
 **Solution**: Check model syntax, ensure proper relationships
+
 ```bash
 Remove-Migration
 # Fix model issues
@@ -178,19 +200,25 @@ Add-Migration InitialCreate
 ```
 
 ### **"Package Not Found"**
+
 **Solution**: Check internet connection, try different package source
+
 ```bash
 dotnet nuget list source
 dotnet restore
 ```
 
 ### **"Templates Don't Work"**
+
 **Solution**: Check file encoding, ensure all placeholders replaced
+
 - Copy one line at a time if full copy fails
 - Use Notepad++ or VS Code for find/replace
 
 ### **"Too Slow"**
+
 **Solution**: Practice specific workflows
+
 - Focus on find/replace speed
 - Use IDE shortcuts (Ctrl+H for find/replace)
 - Practice typing common entity names
@@ -200,6 +228,7 @@ dotnet restore
 ## ✅ **WORKFLOW VERIFICATION CHECKLIST**
 
 ### **After Completing Test**:
+
 - [ ] **Templates copy-paste reliably**
 - [ ] **Find/replace workflow is smooth**
 - [ ] **Basic project setup works (under 15 minutes)**
@@ -215,12 +244,14 @@ dotnet restore
 ## 🎯 **SUCCESS METRICS**
 
 ### **Minimum Success** (You're ready for exam):
+
 - Complete test in 30 minutes
 - No blocking technical issues
 - Templates work on your setup
 - Confident with basic workflow
 
 ### **Optimal Success** (You'll excel in exam):
+
 - Complete test in 20 minutes
 - Smooth copy-paste workflow
 - Quick find/replace execution
@@ -231,6 +262,7 @@ dotnet restore
 ## 🎓 **FINAL CONFIDENCE CHECK**
 
 ### **Ask Yourself**:
+
 1. **"Can I create a basic project in 15 minutes?"**
 2. **"Do the templates save me time vs writing from scratch?"**
 3. **"Am I confident with the find/replace workflow?"**
@@ -238,6 +270,7 @@ dotnet restore
 5. **"Am I ready to help classmates if they have questions?"**
 
 ### **If YES to all**: You're ready! 🚀
+
 ### **If NO to any**: Practice that specific area more
 
 ---
@@ -247,31 +280,26 @@ dotnet restore
 **Use this space to write your observations:**
 
 **What worked well:**
-- 
-- 
-- 
 
-**What needs more practice:**
-- 
-- 
-- 
+-
+-
+- **What needs more practice:**
 
-**School laptop specific notes:**
-- 
-- 
-- 
+-
+-
+- **School laptop specific notes:**
 
-**Timing adjustments:**
-- 
-- 
-- 
+-
+-
+- **Timing adjustments:**
 
-**Personal shortcuts discovered:**
-- 
-- 
-- 
+-
+-
+- **Personal shortcuts discovered:**
 
----
+-
+-
+- ***
 
 ## 🏆 **FINAL MESSAGE**
 
@@ -286,7 +314,8 @@ dotnet restore
 ---
 
 **Next Steps After Test**:
+
 1. **Share with classmates** (if test went well)
-2. **Get good sleep** 
+2. **Get good sleep**
 3. **Light review** of templates tomorrow morning
 4. **Execute systematically** during exam

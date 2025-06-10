@@ -25,7 +25,7 @@ Thumbs.db
 
 # Keep output/ to show examples of what the tool generates
 # but ignore large files
-*.gif.bak 
+*.gif.bak
 
 # Obsidian
 .obsidian/

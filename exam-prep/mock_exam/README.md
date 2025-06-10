@@ -17,8 +17,12 @@ This directory contains **real exam practice materials** to test your systematic
 - **Identify gaps** in your preparation
 - **Build confidence** through successful completion
 
-**🎉 NEW: BookHaven Complete Example Available!**  
-See `BookHaven_Complete_Example/` for a **fully working implementation** built using the exam-prep methodology. This demonstrates what's achievable in ~160 minutes using the systematic approach and templates.
+**🎉 NEW: Complete Examples Available!**
+
+- `BookHaven_Complete_Example/` - **Single-project MVC** implementation (160 min build)
+- `BookHaven_MultiProject_Example/` - **🚨 CRITICAL: Multi-project architecture guide**
+
+**⚠️ IMPORTANT**: Your exam may involve **multi-project solutions** (MVC + API + Shared libraries), not just single MVC projects. The multi-project guide is **essential reading**!
 
 ---
 
@@ -27,7 +31,7 @@ See `BookHaven_Complete_Example/` for a **fully working implementation** built u
 ```
 mock_exam/
 ├── README.md                  # This file - overview and instructions
-├── BookHaven_Complete_Example/ # ✅ COMPLETE WORKING EXAMPLE
+├── BookHaven_Complete_Example/ # ✅ SINGLE-PROJECT MVC EXAMPLE
 │   ├── README_EXAMPLE.md          # How to use this reference implementation
 │   ├── METHODOLOGY.md             # Detailed build methodology used
 │   ├── Controllers/               # All CRUD controllers
@@ -36,6 +40,13 @@ mock_exam/
 │   ├── Data/                      # DbContext with proper configuration
 │   ├── Migrations/                # Working database migrations
 │   └── [complete MVC project]     # Ready-to-run example (160 min build)
+├── BookHaven_MultiProject_Example/ # 🚨 MULTI-PROJECT ARCHITECTURE GUIDE
+│   ├── README_MULTIPROJECT.md     # Essential guide for complex exam scenarios
+│   ├── BookHaven.sln              # Solution file with multiple projects
+│   ├── BookHaven.MVC/             # Main web application project
+│   ├── BookHaven.OrderApi/        # Separate API service project
+│   ├── BookHaven.Shared/          # Shared DTOs and contracts
+│   └── BookHaven.IdentityServer/  # Authentication service project
 ├── assignment/                # Exam assignment materials
 │   ├── VoorbeeldExamenCWeb2.md      # Converted PDF assignment
 │   ├── requirements_analysis.md     # Breakdown of what to build

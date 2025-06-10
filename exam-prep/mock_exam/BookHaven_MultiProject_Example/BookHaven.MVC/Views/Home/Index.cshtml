@@ -1,0 +1,72 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">📚 BookHaven Multi-Project Demo</h1>
+    <p class="lead">Welcome to the multi-project architecture example!</p>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">🌐 MVC Web App</h5>
+                <p class="card-text">This is the main web application (BookHaven.MVC) running on port 5001.</p>
+                <p class="text-success">✅ <strong>Currently running!</strong></p>
+                <small class="text-muted">Port: 5001</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">🔧 Order API</h5>
+                <p class="card-text">Separate API service (BookHaven.OrderApi) for order management.</p>
+                <p class="text-info">🔗 <a href="@ViewBag.ApiUrl" target="_blank">View API Documentation</a></p>
+                <small class="text-muted">Port: 7001</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">🔐 Identity Server</h5>
+                <p class="card-text">Authentication service (BookHaven.IdentityServer) running in background.</p>
+                <p class="text-warning">⚙️ <strong>Background service</strong></p>
+                <small class="text-muted">Port: 6001</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="alert alert-info">
+            <h4 class="alert-heading">🎉 Success!</h4>
+            <p>If you can see this page, the multi-project startup configuration is working correctly!</p>
+            <hr>
+            <p class="mb-0">
+                <strong>Expected behavior when pressing F5:</strong><br>
+                • All 3 projects should start automatically<br>
+                • This web app should open in your browser<br>
+                • API documentation should open in another tab<br>
+                • Identity server should run silently in the background
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-12">
+        <div class="alert alert-secondary">
+            <h5>🛠️ Development Notes</h5>
+            <ul class="mb-0">
+                <li><strong>Project Dependencies:</strong> MVC → Shared ← OrderApi</li>
+                <li><strong>Communication:</strong> MVC calls OrderApi via HttpClient</li>
+                <li><strong>Authentication:</strong> Identity Server provides auth for both services</li>
+                <li><strong>Databases:</strong> Each service has its own database</li>
+            </ul>
+        </div>
+    </div>
+</div> 

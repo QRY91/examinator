@@ -14,8 +14,9 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
-# Visual Studio / VS Code (but keep startup configs)
+# Visual Studio / VS Code (ALLOW STARTUP CONFIG FOR CLASSMATES)
 .vs/
+!.vs/*/v*/Solution.VisualStudio.StartupProjects
 !.vs/*/v*/StartupConfiguration.json
 .vscode/
 *.suo

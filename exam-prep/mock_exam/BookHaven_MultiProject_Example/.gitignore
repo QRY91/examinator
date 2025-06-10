@@ -14,8 +14,9 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
-# Visual Studio / VS Code
+# Visual Studio / VS Code (but keep startup configs)
 .vs/
+!.vs/*/v*/StartupConfiguration.json
 .vscode/
 *.suo
 *.user

@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "BookHaven.MVC",
+    "Project": "BookHaven.MVC\\BookHaven.MVC.csproj",
+    "Action": "Start"
+  },
+  {
+    "Name": "BookHaven.OrderApi",
+    "Project": "BookHaven.OrderApi\\BookHaven.OrderApi.csproj", 
+    "Action": "Start"
+  },
+  {
+    "Name": "BookHaven.IdentityServer",
+    "Project": "BookHaven.IdentityServer\\BookHaven.IdentityServer.csproj",
+    "Action": "Start"
+  }
+] 

@@ -4,9 +4,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Add HttpClient for API communication
+var apiUrl = builder.Configuration["ApiSettings:OrderApiUrl"] ?? "https://localhost:7001";
 builder.Services.AddHttpClient("OrderApi", client =>
 {
-    client.BaseAddress = new Uri("https://localhost:7001/"); // OrderApi URL
+    client.BaseAddress = new Uri(apiUrl);
 });
 
 var app = builder.Build();

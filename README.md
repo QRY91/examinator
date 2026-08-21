@@ -1,3 +1,5 @@
+> **Archived 2026-08-21.** It did its job (the course was passed). The PDF→markdown pipeline, Ollama prompt templates, and multi-pass refinement were reimplemented in Go inside [osmotic](https://github.com/QRY91); the lasting artifacts are the flashcards/summaries and the "peekaboo" spoiler-markdown study format. Read-only from here.
+
 # 🎯 Examinator - Offline Study Companion
 
 **3 commands. No internet. Maximum drilling.**  
